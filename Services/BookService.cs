@@ -1,40 +1,53 @@
-
 using Microsoft.AspNetCore.Mvc;
-
+using MyProject.Interfaces;
 using MyProject.Models;
 
 namespace MyProject.Services;
 
-public static class BookService
+public class BookService : IBookService
 {
-    private static List<Book> lst;
-    static BookService()
+    private List<Book> lst;
+
+    public BookService()
     {
         lst = new List<Book>
         {
-            new Book { Id  =1, Name="להישאר יהודי",Author="הרב זילבר" , Price=80},
-            new Book { Id  =2, Name="דופליקטים ",Author="יונה ספיר " , Price=59.9}
-
+            new Book
+            {
+                Id = 1,
+                Name = "להישאר יהודי",
+                Author = "הרב זילבר",
+                Price = 80,
+            },
+            new Book
+            {
+                Id = 2,
+                Name = "דופליקטים ",
+                Author = "יונה ספיר ",
+                Price = 59.9,
+            },
         };
     }
 
-    public static List<Book> Get()
+    public List<Book> Get()
     {
         return lst;
     }
 
-    public static Book Get(int id)
+    public Book Get(int id)
     {
         var book = lst.FirstOrDefault(b => b.Id == id);
         //if not found return null
         return book;
     }
 
-    public static int Create(Book newBook)
+    public int Create(Book newBook)
     {
-        if (newBook == null
-         || string.IsNullOrWhiteSpace(newBook.Name)
-         || string.IsNullOrWhiteSpace(newBook.Author))
+        if (
+            newBook == null
+            || string.IsNullOrWhiteSpace(newBook.Name)
+            || string.IsNullOrWhiteSpace(newBook.Author)
+        )
         {
             return -1;
         }
@@ -44,11 +57,14 @@ public static class BookService
         return newBook.Id;
     }
 
-    public static bool Update(int id, Book newBook)
+    public bool Update(int id, Book newBook)
     {
-        if (newBook == null || newBook.Id != id
+        if (
+            newBook == null
+            || newBook.Id != id
             || string.IsNullOrWhiteSpace(newBook.Name)
-            || string.IsNullOrWhiteSpace(newBook.Author))
+            || string.IsNullOrWhiteSpace(newBook.Author)
+        )
         {
             return false;
         }
@@ -60,7 +76,7 @@ public static class BookService
         return true;
     }
 
-    public static bool Delete(int id)
+    public bool Delete(int id)
     {
         var book = lst.FirstOrDefault(b => b.Id == id);
         if (book == null)
@@ -68,5 +84,14 @@ public static class BookService
         var index = lst.IndexOf(book);
         lst.RemoveAt(index);
         return true;
+    }
+}
+
+public static class BookUtilities
+{
+    public static void AddBookConst(this IServiceCollection services)
+    {
+        services.AddSingleton<IBookService, BookService>();
+
     }
 }

@@ -1,23 +1,28 @@
 using Microsoft.AspNetCore.Mvc;
-using MyProject.Services;
 using MyProject.Models;
+using MyProject.Interfaces;
 namespace MyProject.Controllers;
 
 [ApiController]
 [Route("[controller]")]
 public class BookController : ControllerBase
 {
+    private IBookService bookService;
+    public BookController(IBookService bookService)
+    {
+        this.bookService = bookService;
 
+    }
     [HttpGet]
     public ActionResult<IEnumerable<Book>> Get()
     {
-        return BookService.Get();
+        return this.bookService.Get();
     }
 
     [HttpGet("{id}")]
     public ActionResult<Book> Get(int id)
     {
-        var book = BookService.Get(id);
+        var book = this.bookService.Get(id);
         if (book == null)
             return NotFound();
         return book;
@@ -26,7 +31,7 @@ public class BookController : ControllerBase
     [HttpPost]
     public ActionResult Post(Book newBook)
     {
-        var newId = BookService.Create(newBook);
+        var newId = this.bookService.Create(newBook);
         if (newId == -1)
         {
             return BadRequest();
@@ -38,7 +43,7 @@ public class BookController : ControllerBase
     [HttpPut("{id}")]
     public ActionResult Put(int id, Book newBook)
     {
-        if (BookService.Update(id, newBook))
+        if (this.bookService.Update(id, newBook))
         {
             return NoContent();
 
@@ -50,8 +55,9 @@ public class BookController : ControllerBase
     [HttpDelete("{id}")]
     public ActionResult Delete(int id)
     {
-        if (BookService.Delete(id))
+        if (this.bookService.Delete(id))
             return Ok();
         return NotFound();
     }
 }
+
