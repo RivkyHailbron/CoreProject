@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 using MyProject.Interfaces;
 using MyProject.Models;
 
@@ -6,92 +6,81 @@ namespace MyProject.Services;
 
 public class BookService : IBookService
 {
-    private List<Book> lst;
+    private List<Book> books;
+    private static string fileName = "book.json";
+    private string filePath;
 
-    public BookService()
+    public BookService(IHostEnvironment env)
     {
-        lst = new List<Book>
+        filePath = Path.Combine(env.ContentRootPath, "Data", fileName);
+
+        using (var jsonFile = File.OpenText(filePath))
         {
-            new Book
+            books = JsonSerializer.Deserialize<List<Book>>(jsonFile.ReadToEnd(),new JsonSerializerOptions
             {
-                Id = 1,
-                Name = "להישאר יהודי",
-                Author = "הרב זילבר",
-                Price = 80,
-            },
-            new Book
-            {
-                Id = 2,
-                Name = "דופליקטים ",
-                Author = "יונה ספיר ",
-                Price = 59.9,
-            },
-        };
+                PropertyNameCaseInsensitive = true
+            });
+        }
     }
 
-    public List<Book> Get()
+    private void saveToFile()
     {
-        return lst;
+        File.WriteAllText(filePath, JsonSerializer.Serialize(books));
     }
 
-    public Book Get(int id)
-    {
-        var book = lst.FirstOrDefault(b => b.Id == id);
-        //if not found return null
-        return book;
-    }
+    public List<Book> Get() => books;
+
+    public Book Get(int id) => books.FirstOrDefault(b => b.Id == id);
 
     public int Create(Book newBook)
     {
-        if (
-            newBook == null
-            || string.IsNullOrWhiteSpace(newBook.Name)
-            || string.IsNullOrWhiteSpace(newBook.Author)
-        )
+        if (newBook == null || string.IsNullOrWhiteSpace(newBook.Name) || string.IsNullOrWhiteSpace(newBook.Author))
         {
             return -1;
         }
-        int maxId = lst.Max(b => b.Id);
+
+        int maxId = books.Count > 0 ? books.Max(b => b.Id) : 0;
         newBook.Id = maxId + 1;
-        lst.Add(newBook);
+        books.Add(newBook);
+        saveToFile();
         return newBook.Id;
     }
 
     public bool Update(int id, Book newBook)
     {
-        if (
-            newBook == null
-            || newBook.Id != id
-            || string.IsNullOrWhiteSpace(newBook.Name)
-            || string.IsNullOrWhiteSpace(newBook.Author)
-        )
+        if (newBook == null || newBook.Id != id || string.IsNullOrWhiteSpace(newBook.Name) || string.IsNullOrWhiteSpace(newBook.Author))
         {
             return false;
         }
-        var book = lst.FirstOrDefault(b => b.Id == id);
+
+        var book = books.FirstOrDefault(b => b.Id == id);
         if (book == null)
             return false;
-        var index = lst.IndexOf(book);
-        lst[index] = newBook;
+
+        var index = books.IndexOf(book);
+        books[index] = newBook;
+        saveToFile();
         return true;
     }
 
     public bool Delete(int id)
     {
-        var book = lst.FirstOrDefault(b => b.Id == id);
+        var book = Get(id);
         if (book == null)
             return false;
-        var index = lst.IndexOf(book);
-        lst.RemoveAt(index);
+
+        books.Remove(book);
+        saveToFile();
         return true;
     }
-}
+
+    // public int Count => books.Count;
+};
 
 public static class BookUtilities
 {
     public static void AddBookConst(this IServiceCollection services)
     {
         services.AddSingleton<IBookService, BookService>();
-
     }
 }

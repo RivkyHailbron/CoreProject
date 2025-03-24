@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "David Cohen",
+        "email": "david.cohen@example.com",
+        "password": "hashed_password_1"
+    },
+    {
+        "id": 2,
+        "name": "Rachel Levi",
+        "email": "rachel.levi@example.com",
+        "password": "hashed_password_2"
+    },
+    {
+        "id": 3,
+        "name": "Moshe Gold",
+        "email": "moshe.gold@example.com",
+        "password": "hashed_password_3"
+    },
+    {
+        "id": 4,
+        "name": "Sarah Mizrahi",
+        "email": "sarah.mizrahi@example.com",
+        "password": "hashed_password_4"
+    },
+    {
+        "id": 5,
+        "name": "Eliyahu Ben-David",
+        "email": "eliyahu.bendavid@example.com",
+        "password": "hashed_password_5"
+    }
+]

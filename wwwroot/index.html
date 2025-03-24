@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book CRUD</title>
+    <link rel="stylesheet" href="./css/site.css" />
+</head>
+
+<body>
+    <h1>Book CRUD</h1>
+
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-name" placeholder="שם הספר החדש">
+        <input type="text" id="add-author" placeholder="מחבר הספר החדש">
+        <input type="number" id="add-price" placeholder="מחיר הספר החדש" min="0" step="0.01">
+        <input type="submit" value="הוסף">
+    </form>
+
+    <div id="editForm">
+        <h3>ערוך</h3>
+        <form action="javascript:void(0);" onsubmit="updateItem()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name">
+            <input type="text" id="edit-author">
+            <input type="number" id="edit-price" min="0" step="0.01">
+            <input type="submit" value="שמור">
+            <a onclick="closeInput()" aria-label="סגור">&#10006;</a>
+        </form>
+    </div>
+
+
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Author</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="books"></tbody>
+    </table>
+
+    <script src="./js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getItems();
+    </script>
+</body>
+
+</html>
