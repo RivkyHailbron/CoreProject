@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "blFs6S4taKjb+0U09A9QPLG50Y/l6i2/AjlWzltpCW0=",
+  "Hash": "Uda09T81txki/y0/MGGsM9jCrE+mi7/EOJdUsA5sGeQ=",
   "Source": "MyProject",
   "BasePath": "_content/MyProject",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "czorjon4wr",
-      "Integrity": "OHrZrrn1tYBaN/pcLXP9G2+LCwIz/of4Qdr2DNz9/vU=",
+      "Fingerprint": "wacopq9es7",
+      "Integrity": "SMW99RWZwxITn2GKhcgpFIuXpxquk0+KVh1GZr8bYOI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "slubzauu6q",
-      "Integrity": "UMUeUr3bahzsdUrObHWicJWlw8Ufbjnj4Jhzy3M8tuU=",
+      "Fingerprint": "uz1djf21os",
+      "Integrity": "psX7XUK+iTWu5FoYHyYjQx/n/5eHCpxNVOV9N1wdqH8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c22n8k5bov",
-      "Integrity": "NFK+1sNAKw5ey9WkWcOcPWd4XHPpibobZ4cuG1wVVAE=",
+      "Fingerprint": "c0n5qtwfen",
+      "Integrity": "RE6repqQSouAxlhiipvlWTeUvoo5t1o+ff6na/uIjYw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
@@ -92,7 +92,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1638"
+          "Value": "1539"
         },
         {
           "Name": "Content-Type",
@@ -100,11 +100,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"OHrZrrn1tYBaN/pcLXP9G2+LCwIz/of4Qdr2DNz9/vU=\""
+          "Value": "\"SMW99RWZwxITn2GKhcgpFIuXpxquk0+KVh1GZr8bYOI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 19:35:25 GMT"
+          "Value": "Wed, 23 Apr 2025 18:50:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -114,12 +114,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-OHrZrrn1tYBaN/pcLXP9G2+LCwIz/of4Qdr2DNz9/vU="
+          "Value": "sha256-SMW99RWZwxITn2GKhcgpFIuXpxquk0+KVh1GZr8bYOI="
         }
       ]
     },
     {
-      "Route": "css/site.czorjon4wr.css",
+      "Route": "css/site.wacopq9es7.css",
       "AssetFile": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -129,7 +129,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1638"
+          "Value": "1539"
         },
         {
           "Name": "Content-Type",
@@ -137,11 +137,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"OHrZrrn1tYBaN/pcLXP9G2+LCwIz/of4Qdr2DNz9/vU=\""
+          "Value": "\"SMW99RWZwxITn2GKhcgpFIuXpxquk0+KVh1GZr8bYOI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 19:35:25 GMT"
+          "Value": "Wed, 23 Apr 2025 18:50:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -151,7 +151,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "czorjon4wr"
+          "Value": "wacopq9es7"
         },
         {
           "Name": "label",
@@ -159,7 +159,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-OHrZrrn1tYBaN/pcLXP9G2+LCwIz/of4Qdr2DNz9/vU="
+          "Value": "sha256-SMW99RWZwxITn2GKhcgpFIuXpxquk0+KVh1GZr8bYOI="
         }
       ]
     },
@@ -174,7 +174,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1513"
+          "Value": "1461"
         },
         {
           "Name": "Content-Type",
@@ -182,11 +182,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"UMUeUr3bahzsdUrObHWicJWlw8Ufbjnj4Jhzy3M8tuU=\""
+          "Value": "\"psX7XUK+iTWu5FoYHyYjQx/n/5eHCpxNVOV9N1wdqH8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 19:35:49 GMT"
+          "Value": "Wed, 23 Apr 2025 18:52:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -196,12 +196,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-UMUeUr3bahzsdUrObHWicJWlw8Ufbjnj4Jhzy3M8tuU="
+          "Value": "sha256-psX7XUK+iTWu5FoYHyYjQx/n/5eHCpxNVOV9N1wdqH8="
         }
       ]
     },
     {
-      "Route": "index.slubzauu6q.html",
+      "Route": "index.uz1djf21os.html",
       "AssetFile": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -211,7 +211,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1513"
+          "Value": "1461"
         },
         {
           "Name": "Content-Type",
@@ -219,11 +219,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"UMUeUr3bahzsdUrObHWicJWlw8Ufbjnj4Jhzy3M8tuU=\""
+          "Value": "\"psX7XUK+iTWu5FoYHyYjQx/n/5eHCpxNVOV9N1wdqH8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 19:35:49 GMT"
+          "Value": "Wed, 23 Apr 2025 18:52:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -233,7 +233,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "slubzauu6q"
+          "Value": "uz1djf21os"
         },
         {
           "Name": "label",
@@ -241,12 +241,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-UMUeUr3bahzsdUrObHWicJWlw8Ufbjnj4Jhzy3M8tuU="
+          "Value": "sha256-psX7XUK+iTWu5FoYHyYjQx/n/5eHCpxNVOV9N1wdqH8="
         }
       ]
     },
     {
-      "Route": "js/site.c22n8k5bov.js",
+      "Route": "js/site.c0n5qtwfen.js",
       "AssetFile": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -256,7 +256,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4175"
+          "Value": "4037"
         },
         {
           "Name": "Content-Type",
@@ -264,11 +264,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NFK+1sNAKw5ey9WkWcOcPWd4XHPpibobZ4cuG1wVVAE=\""
+          "Value": "\"RE6repqQSouAxlhiipvlWTeUvoo5t1o+ff6na/uIjYw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 14:04:08 GMT"
+          "Value": "Wed, 23 Apr 2025 18:50:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -278,7 +278,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c22n8k5bov"
+          "Value": "c0n5qtwfen"
         },
         {
           "Name": "label",
@@ -286,7 +286,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-NFK+1sNAKw5ey9WkWcOcPWd4XHPpibobZ4cuG1wVVAE="
+          "Value": "sha256-RE6repqQSouAxlhiipvlWTeUvoo5t1o+ff6na/uIjYw="
         }
       ]
     },
@@ -301,7 +301,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4175"
+          "Value": "4037"
         },
         {
           "Name": "Content-Type",
@@ -309,11 +309,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NFK+1sNAKw5ey9WkWcOcPWd4XHPpibobZ4cuG1wVVAE=\""
+          "Value": "\"RE6repqQSouAxlhiipvlWTeUvoo5t1o+ff6na/uIjYw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 14:04:08 GMT"
+          "Value": "Wed, 23 Apr 2025 18:50:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -323,7 +323,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-NFK+1sNAKw5ey9WkWcOcPWd4XHPpibobZ4cuG1wVVAE="
+          "Value": "sha256-RE6repqQSouAxlhiipvlWTeUvoo5t1o+ff6na/uIjYw="
         }
       ]
     }

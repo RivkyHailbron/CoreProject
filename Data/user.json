@@ -1,32 +1,37 @@
 [
     {
-        "id": 1,
-        "name": "David Cohen",
-        "email": "david.cohen@example.com",
-        "password": "hashed_password_1"
+        "Id": 1,
+        "Name": "אברהם כהן",
+        "Email": "avraham@example.com",
+        "Password": "password123",
+        "Role": "Admin"
     },
     {
-        "id": 2,
-        "name": "Rachel Levi",
-        "email": "rachel.levi@example.com",
-        "password": "hashed_password_2"
+        "Id": 2,
+        "Name": "מרים לוי",
+        "Email": "miriam@example.com",
+        "Password": "password456",
+        "Role": "User"
     },
     {
-        "id": 3,
-        "name": "Moshe Gold",
-        "email": "moshe.gold@example.com",
-        "password": "hashed_password_3"
+        "Id": 3,
+        "Name": "ישראל פרידמן",
+        "Email": "yisrael@example.com",
+        "Password": "password789",
+        "Role": "User"
     },
     {
-        "id": 4,
-        "name": "Sarah Mizrahi",
-        "email": "sarah.mizrahi@example.com",
-        "password": "hashed_password_4"
+        "Id": 4,
+        "Name": "חיים גולדשטין",
+        "Email": "chaim@example.com",
+        "Password": "password101",
+        "Role": "Admin"
     },
     {
-        "id": 5,
-        "name": "Eliyahu Ben-David",
-        "email": "eliyahu.bendavid@example.com",
-        "password": "hashed_password_5"
+        "Id": 5,
+        "Name": "שרה פישמן",
+        "Email": "sara@example.com",
+        "Password": "password202",
+        "Role": "User"
     }
 ]

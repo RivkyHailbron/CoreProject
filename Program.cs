@@ -1,19 +1,21 @@
-using MyProject.Services;
+
 using Microsoft.OpenApi.Models;
+using MyProject.Interfaces;
 using MyProject.Middlewares;
-using System.Net.Mail;
-using System.Net;
+using MyProject.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+Console.WriteLine($"Content root path: {builder.Environment.ContentRootPath}");
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 builder.Services.AddBookConst();
-// builder.Services.AddUserConst();
+builder.Services.AddUserConst();
+builder.Services.AddLoginConst();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-//  builder.Services.AddOpenApi();
+//   builder.Services.AddOpenApi();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -33,7 +35,6 @@ app.UseStaticFiles();
 // app.UseMyLogMiddleware();
 
 // app.UseMyErrorMiddleware();
-
 app.UseRouting();
 
 app.UseHttpsRedirection();
