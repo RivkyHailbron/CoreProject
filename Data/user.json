@@ -10,7 +10,7 @@
         "Id": 2,
         "Name": "מרים לוי",
         "Email": "miriam@example.com",
-        "Password": "password456",
+        "Password": "456",
         "Role": "User"
     },
     {

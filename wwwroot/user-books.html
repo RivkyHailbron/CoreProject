@@ -1,0 +1,46 @@
+<!-- wwwroot/users.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>הספרים שלי</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>הספרים שלי</h1>
+    <nav>
+      <button onclick="logout()">התנתקות</button>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <button onclick="openBookModal()">הוסף ספר</button>
+      <div id="bookList" class="card-container"></div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="bookModal" class="modal hidden">
+    <div class="modal-content">
+      <form id="bookForm">
+        <h2>ספר</h2>
+        <input type="hidden" id="bookId" />
+        <label>כותר:</label>
+        <input type="text" id="bookTitle" required />
+        <label>תיאור:</label>
+        <textarea id="bookDescription" required></textarea>
+        <div class="modal-actions">
+          <button type="submit">שמור</button>
+          <button type="button" onclick="closeBookModal()">ביטול</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/user-books.js"></script>
+</body>
+</html>

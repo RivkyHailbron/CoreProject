@@ -1,30 +1,81 @@
-async function loadBooks() {
-    const token = getToken();
-    const res = await fetch("/book", {
-      headers: { Authorization: `Bearer ${token}` }
+document.addEventListener("DOMContentLoaded", () => {
+  const user = checkAuthAndRole(["Admin"]);
+  if (!user) return;
+
+  loadBooks();
+
+  document.getElementById("bookForm").addEventListener("submit", saveBook);
+});
+
+function loadBooks() {
+  fetch("/book", {
+    method: "GET",
+    headers: { Authorization: `Bearer ${getToken()}` },
+  })
+    .then((res) => res.json())
+    .then((books) => {
+      const container = document.getElementById("bookList");
+      container.innerHTML = "";
+      books.forEach((book) => {
+        container.innerHTML += `
+          <div class="card">
+            <h3>${book.title}</h3>
+            <p>Author: ${book.author}</p>
+            <button onclick='editBook(${JSON.stringify(book)})'>Edit</button>
+            <button onclick='deleteBook(${book.id})'>Delete</button>
+          </div>`;
+      });
     });
-    const books = await res.json();
-    // populate table...
-  }
-  
-  async function addBook(book) {
-    const token = getToken();
-    await fetch("/book", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      },
-      body: JSON.stringify(book)
-    });
-    loadBooks();
-  }
-  
-  async function deleteBook(id) {
-    const token = getToken();
-    await fetch(`/book/${id}`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${token}` }
-    });
-    loadBooks();
-  }
+}
+
+function openBookModal(book = null) {
+  document.getElementById("bookModal").classList.remove("hidden");
+  document.getElementById("bookId").value = book?.id || "";
+  document.getElementById("bookTitle").value = book?.title || "";
+  document.getElementById("bookAuthor").value = book?.author || "";
+}
+
+function closeBookModal() {
+  document.getElementById("bookModal").classList.add("hidden");
+}
+
+function saveBook(e) {
+  e.preventDefault();
+  const id = document.getElementById("bookId").value;
+  const title = document.getElementById("bookTitle").value;
+  const author = document.getElementById("bookAuthor").value;
+  const method = id ? "PUT" : "POST";
+  const url = id ? `/book/${id}` : "/book";
+
+  fetch(url, {
+    method,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${getToken()}`,
+    },
+    body: JSON.stringify({ id, title, author }),
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to save book");
+      closeBookModal();
+      loadBooks();
+    })
+    .catch((err) => alert(err.message));
+}
+
+function editBook(book) {
+  openBookModal(book);
+}
+
+function deleteBook(id) {
+  if (!confirm("Are you sure?")) return;
+  fetch(`/book/${id}`, {
+    method: "DELETE",
+    headers: { Authorization: `Bearer ${getToken()}` },
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to delete book");
+      loadBooks();
+    })
+    .catch((err) => alert(err.message));
+}

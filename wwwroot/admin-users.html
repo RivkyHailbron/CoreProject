@@ -1,37 +1,53 @@
+<!-- wwwroot/admin-users.html -->
 <!DOCTYPE html>
-<html lang="he">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>ניהול משתמשים</title>
-    <link rel="stylesheet" href="style.css">
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - ניהול משתמשים</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <header>
-        <h1>משתמשים - ממשק ניהול</h1>
-        <nav>
-            <button onclick="location.href='admin-books.html'">חזרה לניהול ספרים</button>
-            <button onclick="logout()">התנתקות</button>
-        </nav>
-    </header>
+  <header>
+    <h1>ניהול משתמשים</h1>
+    <nav>
+      <button onclick="window.location.href='admin-books.html'">ניהול ספרים</button>
+      <button onclick="logout()">התנתקות</button>
+    </nav>
+  </header>
 
-    <main>
-        <section>
-            <h2>רשימת משתמשים</h2>
-            <table id="users-table">
-                <thead>
-                    <tr>
-                        <th>מזהה</th>
-                        <th>אימייל</th>
-                        <th>תפקיד</th>
-                        <th>פעולות</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </section>
-    </main>
-    <script src="js/app.js" defer></script>
-    <script src="js/admin-users.js" defer></script>
+  <main>
+    <section>
+      <button onclick="openUserModal()">הוסף משתמש</button>
+      <div id="userList" class="card-container"></div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="userModal" class="modal hidden">
+    <div class="modal-content">
+      <form id="userForm">
+        <h2>עריכת משתמש</h2>
+        <input type="hidden" id="userId" />
+        <label>אימייל:</label>
+        <input type="email" id="userEmail" required />
+        <label>סיסמה:</label>
+        <input type="password" id="userPassword" required />
+        <label>הרשאה:</label>
+        <select id="userRole">
+          <option value="User">User</option>
+          <option value="Admin">Admin</option>
+        </select>
+        <div class="modal-actions">
+          <button type="submit">שמור</button>
+          <button type="button" onclick="closeUserModal()">ביטול</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+
+  <script src="js/app.js"></script>
+  <script src="js/admin-users.js"></script>
 </body>
 </html>

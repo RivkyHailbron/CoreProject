@@ -33,16 +33,16 @@
       "PackagePath": "staticwebassets\\js\\login.js"
     },
     {
-      "Id": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\js\\users.js",
-      "PackagePath": "staticwebassets\\js\\users.js"
+      "Id": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\js\\user-books.js",
+      "PackagePath": "staticwebassets\\js\\user-books.js"
     },
     {
       "Id": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\login.html",
       "PackagePath": "staticwebassets\\login.html"
     },
     {
-      "Id": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\users.html",
-      "PackagePath": "staticwebassets\\users.html"
+      "Id": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\user-books.html",
+      "PackagePath": "staticwebassets\\user-books.html"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MyProject.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
