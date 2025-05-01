@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function saveUser(e) {
     e.preventDefault();
     const id = document.getElementById("userId").value;
+    const name = document.getElementById("userName").value;
     const email = document.getElementById("userEmail").value;
     const password = document.getElementById("userPassword").value;
     const role = document.getElementById("userRole").value;
@@ -50,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const method = id ? "PUT" : "POST";
     const url = id ? `/user/${id}` : "/user";
   
-    const data = { id, email, password, role };
+    const data = { id,name, email, password, role };
   
     fetch(url, {
       method,

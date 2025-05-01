@@ -19,8 +19,9 @@ function loadBooks() {
       books.forEach((book) => {
         container.innerHTML += `
           <div class="card">
-            <h3>${book.title}</h3>
-            <p>Author: ${book.author}</p>
+            <h3>${book.name}</h3>
+            <p> ${book.author}</p>
+            <p> ${book.price} ש"ח </p>
             <button onclick='editBook(${JSON.stringify(book)})'>Edit</button>
             <button onclick='deleteBook(${book.id})'>Delete</button>
           </div>`;
@@ -42,25 +43,33 @@ function closeBookModal() {
 function saveBook(e) {
   e.preventDefault();
   const id = document.getElementById("bookId").value;
-  const title = document.getElementById("bookTitle").value;
+  const Name = document.getElementById("bookTitle").value;
   const author = document.getElementById("bookAuthor").value;
+  const price = document.getElementById("bookPrice").value;
+  //מה יש בID?
+  //אם יש ID אז אני מעדכן ספר קיים
+  //אם אין ID אז אני מוסיף ספר חדש
+  const newBook = {
+    "id": id,
+    "name": Name,
+    "author": author,
+    "price": price
+  }
   const method = id ? "PUT" : "POST";
   const url = id ? `/book/${id}` : "/book";
-
   fetch(url, {
     method,
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${getToken()}`,
     },
-    body: JSON.stringify({ id, title, author }),
-  })
-    .then((res) => {
-      if (!res.ok) throw new Error("Failed to save book");
-      closeBookModal();
-      loadBooks();
-    })
-    .catch((err) => alert(err.message));
+    body: JSON.stringify(newBook),
+
+  }).then((res) => {
+    if (!res.ok) throw new Error("Failed to save****************************** book");
+    closeBookModal();
+    loadBooks();
+  }).catch((err) => alert(err.message));
 }
 
 function editBook(book) {
@@ -78,4 +87,8 @@ function deleteBook(id) {
       loadBooks();
     })
     .catch((err) => alert(err.message));
+}
+const logout = () => {
+  sessionStorage.removeItem("token");
+  window.location.href = "/login.html";
 }

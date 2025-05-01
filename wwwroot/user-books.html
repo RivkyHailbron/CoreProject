@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>הספרים שלי</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
@@ -28,10 +28,10 @@
       <form id="bookForm">
         <h2>ספר</h2>
         <input type="hidden" id="bookId" />
-        <label>כותר:</label>
+        <label>כותרת:</label>
         <input type="text" id="bookTitle" required />
-        <label>תיאור:</label>
-        <textarea id="bookDescription" required></textarea>
+        <label>מחיר:</label>
+        <textarea id="bookPrice" required></textarea>
         <div class="modal-actions">
           <button type="submit">שמור</button>
           <button type="button" onclick="closeBookModal()">ביטול</button>

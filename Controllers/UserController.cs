@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using MyProject.Models;
 using MyProject.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+
 namespace MyProject.Controllers;
 
 [ApiController]

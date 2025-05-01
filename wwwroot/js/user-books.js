@@ -147,6 +147,7 @@
 // }
 
 // wwwroot/js/users.js
+
 document.addEventListener("DOMContentLoaded", () => {
     const user = checkAuthAndRole(["User"]);
     loadUserBooks();
@@ -181,7 +182,7 @@ function renderBooks(books) {
 function openBookModal() {
     document.getElementById("bookId").value = "";
     document.getElementById("bookTitle").value = "";
-    document.getElementById("bookDescription").value = "";
+    document.getElementById("bookPrice").value = "";
     document.getElementById("bookModal").classList.remove("hidden");
 }
 
@@ -193,7 +194,8 @@ function saveBook(e) {
     e.preventDefault();
     const id = document.getElementById("bookId").value;
     const title = document.getElementById("bookTitle").value;
-    const description = document.getElementById("bookDescription").value;
+    const price = document.getElementById("bookPrice").value;
+    
     const method = id ? "PUT" : "POST";
     const url = id ? `/book/${id}` : "/book";
 
@@ -203,7 +205,7 @@ function saveBook(e) {
             "Content-Type": "application/json",
             Authorization: `Bearer ${getToken()}`
         },
-        body: JSON.stringify({ title, description })
+        body: JSON.stringify({ name:title ,autor:"דוגמת שם" , price })
     })
         .then(res => {
             if (!res.ok) throw new Error("שגיאה בשמירה");
@@ -216,7 +218,7 @@ function saveBook(e) {
 function editBook(id, title, description) {
     document.getElementById("bookId").value = id;
     document.getElementById("bookTitle").value = title;
-    document.getElementById("bookDescription").value = description;
+    document.getElementById("bookPrice").value = description;
     document.getElementById("bookModal").classList.remove("hidden");
 }
 

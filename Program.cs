@@ -39,7 +39,6 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(cfg =>
 {
-
     cfg.RequireHttpsMetadata = false;
     cfg.TokenValidationParameters = new JwtService(builder.Configuration).GetTokenValidationParameters();
 });

@@ -1,38 +1,46 @@
-document.getElementById('loginForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-  
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
-    const errorMessage = document.getElementById('errorMessage');
-  
-    try {
-      const response = await fetch('/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-      });
-  
-      if (!response.ok) {
-        const error = await response.text();
-        errorMessage.textContent = error || 'שגיאה בהתחברות';
-        return;
-      }
-  
-      const data = await response.json();
-      sessionStorage.setItem('token', data.token);
-  
-      // ניתוח תפקיד מתוך הטוקן (לצורך ניווט)
-      const payload = JSON.parse(atob(data.token.split('.')[1]));
-      const role = payload.role;
-  
-      if (role === 'Admin') {
-        window.location.href = '/admin-books.html';
-      } else {
-        window.location.href = '/user-books.html';
-      }
-    } catch (err) {
-      console.error(err);
-      errorMessage.textContent = 'שגיאה בעת ניסיון התחברות';
-    }
-  });
-  
+document.addEventListener("DOMContentLoaded", () => {
+
+    const form = document.getElementById("loginForm");
+    form.onsubmit = async (e) => {
+        e.preventDefault();
+        console.log("Form submitted");
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const response = await fetch("/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        });
+
+        if (response.status === 401) {
+            document.getElementById("error").innerText = "פרטי התחברות שגויים";
+            return;
+        } else if (response.status !== 200) {
+            document.getElementById("error").innerText = "שגיאה בשרת";
+            return;
+        }
+        const data = await response.json();
+        sessionStorage.setItem("token", data.token);
+        redirectToRolePage();
+    };
+});
+// async function login() {
+//     const email = document.getElementById("email").value;
+//     const password = document.getElementById("password").value;
+
+//     const res = await fetch('/login', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ email, password })
+//     });
+
+//     if (res.ok) {
+//         const data = await res.json();
+//         sessionStorage.setItem("token", data.token);
+//         window.location.href = "index.html";
+//     } else {
+//         alert("Login failed");
+//     }
+// }

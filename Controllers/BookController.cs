@@ -29,7 +29,6 @@ public class BookController : ControllerBase
     }
 
     [HttpGet("{id}")]
-
     [Authorize(Policy = "User")]
     public ActionResult<Book> Get(int id)
     {
@@ -40,10 +39,20 @@ public class BookController : ControllerBase
     }
 
     [HttpPost]
-    [Authorize(Policy = "user")]
-    public ActionResult Post(Book newBook)
+    [Authorize(Policy = "User")]
+    public ActionResult Post([FromBody] Book newBook)
     {
-        var newId = this.bookService.Create(newBook);
+        System.Console.WriteLine(newBook);
+        Book book = new Book
+        {
+            Id = newBook.Id,
+            Name = newBook.Name,
+            Author = newBook.Author,
+            Price = newBook.Price
+        };
+        if (book == null)
+            return BadRequest();
+        var newId = this.bookService.Create(book);
         if (newId == -1)
         {
             return BadRequest();

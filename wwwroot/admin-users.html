@@ -5,14 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin - ניהול משתמשים</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
     <h1>ניהול משתמשים</h1>
     <nav>
       <button onclick="window.location.href='admin-books.html'">ניהול ספרים</button>
-      <button onclick="logout()">התנתקות</button>
+      <button onclick="logout()">Logout</button>
     </nav>
   </header>
 
@@ -29,6 +29,8 @@
       <form id="userForm">
         <h2>עריכת משתמש</h2>
         <input type="hidden" id="userId" />
+        <label>שם:</label>
+        <input type="text" id="userName" required />
         <label>אימייל:</label>
         <input type="email" id="userEmail" required />
         <label>סיסמה:</label>
