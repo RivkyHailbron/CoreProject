@@ -74,7 +74,6 @@ public class BookService : IBookService
         return true;
     }
 
-    // public int Count => books.Count;
 };
 
 public static class BookUtilities

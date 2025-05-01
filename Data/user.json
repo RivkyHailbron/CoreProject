@@ -1,9 +1,9 @@
 [
     {
         "Id": 1,
-        "Name": "אברהם כהן",
-        "Email": "avraham@example.com",
-        "Password": "password123",
+        "Name": " רבקי היילברון",
+        "Email": "rivky2712@gmail.com",
+        "Password": "214856668",
         "Role": "Admin"
     },
     {
@@ -25,13 +25,20 @@
         "Name": "חיים גולדשטין",
         "Email": "chaim@example.com",
         "Password": "password101",
-        "Role": "Admin"
+        "Role": "User"
     },
     {
         "Id": 5,
         "Name": "שרה פישמן",
         "Email": "sara@example.com",
         "Password": "password202",
+        "Role": "User"
+    },
+    {
+        "Id": 6,
+        "Name": "אברהם כהן",
+        "Email": "avraham@example.com",
+        "Password": "password123",
         "Role": "User"
     }
 ]

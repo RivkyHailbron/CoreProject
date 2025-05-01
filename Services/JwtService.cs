@@ -20,6 +20,18 @@ public class JwtService
         _audience = configuration["Jwt:Audience"];
         _expireDays = int.Parse(configuration["Jwt:ExpireDays"]);
     }
+    public  TokenValidationParameters GetTokenValidationParameters(){
+        return new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = _issuer,
+            ValidAudience = _audience,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_key))
+        };
+    }
 
     public string GenerateToken(User user)
     {
@@ -27,7 +39,7 @@ public class JwtService
         {
             new Claim("id", user.Id.ToString()),
             new Claim("email", user.Email),
-            new Claim("role", user.Role)
+            new Claim(ClaimTypes.Role, user.Role.ToString()),
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_key));

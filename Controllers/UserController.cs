@@ -12,15 +12,17 @@ public class UserController : ControllerBase
     public UserController(IUserService userService)
     {
         this.userService = userService;
-
     }
     [HttpGet]
+    // [Route("[action]")]
+    [Authorize(Policy = "Admin")]
     public ActionResult<IEnumerable<User>> Get()
     {
         return this.userService.Get();
     }
 
     [HttpGet("{id}")]
+    [Authorize(Policy = "User")]
     public ActionResult<User> Get(int id)
     {
         var user = this.userService.GetById(id);
@@ -30,6 +32,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Policy = "Admin")]
     public ActionResult Post(User newUser)
     {
         var newId = this.userService.Create(newUser);
@@ -42,19 +45,17 @@ public class UserController : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Policy = "User")]
     public ActionResult Put(int id, User newUser)
     {
         if (this.userService.Update(id, newUser))
         {
             return NoContent();
-
         }
         return BadRequest();
-
     }
 
     [HttpDelete("{id}")]
-    [Route("[action]")]
     [Authorize(Policy = "Admin")]
     public ActionResult Delete(int id)
     {

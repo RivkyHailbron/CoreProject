@@ -10,5 +10,4 @@ public interface IBookService
     int Create(Book newBook);
     bool Update(int id, Book newBook);
     bool Delete(int id);
-    // int Count { get; }
 }

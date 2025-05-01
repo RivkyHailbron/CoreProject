@@ -82,5 +82,8 @@ public static class UserUtilities
     public static void AddUserConst(this IServiceCollection services)
     {
         services.AddSingleton<IUserService, UserService>();
+        // Add the current user service
+        services.AddHttpContextAccessor();
+        services.AddScoped<ICurrentUserService, CurrentUserService>();
     }
 }
