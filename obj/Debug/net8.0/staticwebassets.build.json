@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kss1/LZ8k7cJ9ovKMRvwOjQNvgEaml5+yIVvQ+XImHU=",
+  "Hash": "Ge5tkMF3qOc5h0TPLZj86HZMLekXMjXhVlz/1kScbjw=",
   "Source": "MyProject",
   "BasePath": "_content/MyProject",
   "Mode": "Default",
@@ -115,8 +115,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "llbs8ylo2y",
-      "Integrity": "R7b4ASoNVar7q/NH4fHl3sjzmnbZ9E5MxQYbpmIFVYI=",
+      "Fingerprint": "07fp5vo8bq",
+      "Integrity": "1GUF22qnIHKh2t22zLSONESZneWIGJ+hzvgs8dvMiSM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\admin-books.js"
@@ -578,6 +578,51 @@
       ]
     },
     {
+      "Route": "js/admin-books.07fp5vo8bq.js",
+      "AssetFile": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\js\\admin-books.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2992"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1GUF22qnIHKh2t22zLSONESZneWIGJ+hzvgs8dvMiSM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 May 2025 22:27:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "07fp5vo8bq"
+        },
+        {
+          "Name": "label",
+          "Value": "js/admin-books.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1GUF22qnIHKh2t22zLSONESZneWIGJ+hzvgs8dvMiSM="
+        }
+      ]
+    },
+    {
       "Route": "js/admin-books.js",
       "AssetFile": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\js\\admin-books.js",
       "Selectors": [],
@@ -588,7 +633,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2803"
+          "Value": "2992"
         },
         {
           "Name": "Content-Type",
@@ -596,11 +641,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"R7b4ASoNVar7q/NH4fHl3sjzmnbZ9E5MxQYbpmIFVYI=\""
+          "Value": "\"1GUF22qnIHKh2t22zLSONESZneWIGJ+hzvgs8dvMiSM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 15:01:48 GMT"
+          "Value": "Thu, 01 May 2025 22:27:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -610,52 +655,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-R7b4ASoNVar7q/NH4fHl3sjzmnbZ9E5MxQYbpmIFVYI="
-        }
-      ]
-    },
-    {
-      "Route": "js/admin-books.llbs8ylo2y.js",
-      "AssetFile": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\js\\admin-books.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2803"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"R7b4ASoNVar7q/NH4fHl3sjzmnbZ9E5MxQYbpmIFVYI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 15:01:48 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "llbs8ylo2y"
-        },
-        {
-          "Name": "label",
-          "Value": "js/admin-books.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-R7b4ASoNVar7q/NH4fHl3sjzmnbZ9E5MxQYbpmIFVYI="
+          "Value": "sha256-1GUF22qnIHKh2t22zLSONESZneWIGJ+hzvgs8dvMiSM="
         }
       ]
     },

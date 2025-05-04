@@ -42,7 +42,8 @@ function closeBookModal() {
 
 function saveBook(e) {
   e.preventDefault();
-  const id = document.getElementById("bookId").value;
+  const id = document.getElementById('bookId').value.trim() === "" || document.getElementById('bookId').value.trim() === undefined ? 0 : document.getElementById('bookId').value.trim();
+  // const id = document.getElementById("bookId").value;
   const Name = document.getElementById("bookTitle").value;
   const author = document.getElementById("bookAuthor").value;
   const price = document.getElementById("bookPrice").value;

@@ -48,17 +48,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"q2v34ej3c5"},{"Name":"integrity","Value":"sha256-7tM4f9gCkd2pgcgLOjbUatNicZajoJ3Y\u002BxOAV6bWqBk="},{"Name":"label","Value":"_content/MyProject/index.html"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"476"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00227tM4f9gCkd2pgcgLOjbUatNicZajoJ3Y\u002BxOAV6bWqBk=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 13:19:05 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MyProject/js/admin-books.07fp5vo8bq.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\admin-books.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"07fp5vo8bq"},{"Name":"integrity","Value":"sha256-1GUF22qnIHKh2t22zLSONESZneWIGJ\u002Bhzvgs8dvMiSM="},{"Name":"label","Value":"_content/MyProject/js/admin-books.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2992"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00221GUF22qnIHKh2t22zLSONESZneWIGJ\u002Bhzvgs8dvMiSM=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 22:27:58 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MyProject/js/admin-books.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\admin-books.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-R7b4ASoNVar7q/NH4fHl3sjzmnbZ9E5MxQYbpmIFVYI="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2803"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022R7b4ASoNVar7q/NH4fHl3sjzmnbZ9E5MxQYbpmIFVYI=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 15:01:48 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/MyProject/js/admin-books.llbs8ylo2y.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\admin-books.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"llbs8ylo2y"},{"Name":"integrity","Value":"sha256-R7b4ASoNVar7q/NH4fHl3sjzmnbZ9E5MxQYbpmIFVYI="},{"Name":"label","Value":"_content/MyProject/js/admin-books.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2803"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022R7b4ASoNVar7q/NH4fHl3sjzmnbZ9E5MxQYbpmIFVYI=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 15:01:48 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-1GUF22qnIHKh2t22zLSONESZneWIGJ\u002Bhzvgs8dvMiSM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2992"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00221GUF22qnIHKh2t22zLSONESZneWIGJ\u002Bhzvgs8dvMiSM=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 May 2025 22:27:58 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MyProject/js/admin-users.f1zdcaj4ju.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\admin-users.js'))</AssetFile>
