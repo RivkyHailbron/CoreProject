@@ -180,10 +180,10 @@ function renderBooks(books) {
 }
 
 function openBookModal() {
+    document.getElementById("bookModal").classList.remove("hidden");
     document.getElementById("bookId").value = "";
     document.getElementById("bookTitle").value = "";
     document.getElementById("bookPrice").value = "";
-    document.getElementById("bookModal").classList.remove("hidden");
 }
 
 function closeBookModal() {
@@ -195,7 +195,7 @@ function saveBook(e) {
     const id = document.getElementById("bookId").value;
     const title = document.getElementById("bookTitle").value;
     const price = document.getElementById("bookPrice").value;
-    
+
     const method = id ? "PUT" : "POST";
     const url = id ? `/book/${id}` : "/book";
 
@@ -205,7 +205,7 @@ function saveBook(e) {
             "Content-Type": "application/json",
             Authorization: `Bearer ${getToken()}`
         },
-        body: JSON.stringify({ name:title ,autor:"דוגמת שם" , price })
+        body: JSON.stringify({ id: 0, name: title, autor: "דוגמת שם", price })
     })
         .then(res => {
             if (!res.ok) throw new Error("שגיאה בשמירה");

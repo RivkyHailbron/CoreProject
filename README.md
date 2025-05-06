@@ -1,6 +1,6 @@
 ﻿# CoreProject
  
-back end -Api project in .CORE
+back end -Web Api project in .CORE
 
 fronted- js 
 

@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         users.forEach((user) => {
           container.innerHTML += `
             <div class="card">
-              <h3>${user.fullName || user.email}</h3>
+              <h3>${user.name || user.email}</h3>
               <p>Email: ${user.email}</p>
               <p>Role: ${user.role}</p>
               <button onclick='editUser(${JSON.stringify(user)})'>Edit</button>
@@ -31,8 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function openUserModal(user = null) {
     document.getElementById("userModal").classList.remove("hidden");
     document.getElementById("userId").value = user?.id || "";
+    document.getElementById("userName").value = user?.name || "";
     document.getElementById("userEmail").value = user?.email || "";
-    document.getElementById("userPassword").value = "";
+    document.getElementById("userPassword").value = user?.password || "";
     document.getElementById("userRole").value = user?.role || "User";
   }
   
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   function saveUser(e) {
     e.preventDefault();
-    const id = document.getElementById("userId").value;
+    const id = document.getElementById("userId").value.trim() === "" || document.getElementById("userId").value.trim() === undefined ? 0 : document.getElementById("userId").value.trim();
     const name = document.getElementById("userName").value;
     const email = document.getElementById("userEmail").value;
     const password = document.getElementById("userPassword").value;

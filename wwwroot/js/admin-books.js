@@ -32,18 +32,17 @@ function loadBooks() {
 function openBookModal(book = null) {
   document.getElementById("bookModal").classList.remove("hidden");
   document.getElementById("bookId").value = book?.id || "";
-  document.getElementById("bookTitle").value = book?.title || "";
+  document.getElementById("bookTitle").value = book?.name || "";
   document.getElementById("bookAuthor").value = book?.author || "";
+  document.getElementById("bookPrice").value = book?.price || "";
+
 }
 
-function closeBookModal() {
-  document.getElementById("bookModal").classList.add("hidden");
-}
+
 
 function saveBook(e) {
   e.preventDefault();
   const id = document.getElementById('bookId').value.trim() === "" || document.getElementById('bookId').value.trim() === undefined ? 0 : document.getElementById('bookId').value.trim();
-  // const id = document.getElementById("bookId").value;
   const Name = document.getElementById("bookTitle").value;
   const author = document.getElementById("bookAuthor").value;
   const price = document.getElementById("bookPrice").value;
@@ -72,6 +71,9 @@ function saveBook(e) {
     loadBooks();
   }).catch((err) => alert(err.message));
 }
+function closeBookModal() {
+  document.getElementById("bookModal").classList.add("hidden");
+}
 
 function editBook(book) {
   openBookModal(book);
@@ -89,7 +91,4 @@ function deleteBook(id) {
     })
     .catch((err) => alert(err.message));
 }
-const logout = () => {
-  sessionStorage.removeItem("token");
-  window.location.href = "/login.html";
-}
+

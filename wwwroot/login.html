@@ -1,9 +1,52 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <title>התחברות</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ece9e6, #ffffff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+   
+  </style>
 </head>
 <body>
   <div class="container">
@@ -11,7 +54,7 @@
     <form id="loginForm">
       <input type="email" id="email" placeholder="אימייל" required />
       <input type="password" id="password" placeholder="סיסמה" required />
-      <button type="submit" id="sigh-in">התחבר</button>
+      <button type="submit" id="sigh-in" style="width: 100%;">התחבר</button>
     </form>
     <div id="error"></div>
   </div>

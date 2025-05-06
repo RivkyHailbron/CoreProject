@@ -138,7 +138,39 @@ main {
 }
 
 /* General buttons */
+/* button {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #4cae4c;
+} */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
 button {
-  font-family: inherit;
-  font-size: 1rem;
+  font-size: large;
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#error {
+  margin-top: 15px;
+  color: red;
+  font-size: 14px;
 }

@@ -26,6 +26,11 @@ function redirectToRolePage() {
     window.location.href = "login.html";
   }
 }
+const logout = () => {
+  sessionStorage.removeItem("token");
+  window.location.href = "/login.html";
+}
+
 
 function checkAuthAndRole(requiredRoles = []) {
   const token = getToken();
