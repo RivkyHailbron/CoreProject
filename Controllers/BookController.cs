@@ -18,14 +18,18 @@ public class BookController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Policy = "User")]
     public ActionResult<IEnumerable<Book>> Get()
     {
         if (!currentUserService.IsAuthenticated)
+        {
             return Unauthorized();
+        }
         List<Book> books = this.bookService.Get();
         if (currentUserService.IsAdmin)
             return Ok(books);
-        return books.Where(b => b.Id.ToString() == currentUserService.UserId).ToList();
+        System.Console.WriteLine(currentUserService.Name+" is not admin");
+        return Ok(books.Where(b => b.Author == currentUserService.Name).ToList());
     }
 
     [HttpGet("{id}")]

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using MyProject.Interfaces;
+using MyProject.Models;
 using MyProject.Services;
 
 namespace MyProject.Controllers;
@@ -22,7 +23,7 @@ public class LoginController : ControllerBase
     [HttpPost]
     public IActionResult Login([FromBody] LoginRequest1 request)
     {
-        var user = _userService.GetByEmail(request.Email);
+        User user = _userService.GetByEmail(request.Email);
         if (user == null)
         {
             return NotFound("User not found");
