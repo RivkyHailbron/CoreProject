@@ -19,15 +19,15 @@ function loadUserBooks() {
 function renderBooks(books) {
     const container = document.getElementById("bookList");
     container.innerHTML = "";
-    books.forEach(book => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-        <h3>${book.title}</h3>
-        <button onclick="editBook(${book.id}, '${book.name}')">✏️</button>
-        <button onclick="deleteBook(${book.id})">🗑️</button>
-      `;
-        container.appendChild(card);
+    books.forEach((book) => {
+        container.innerHTML += `
+          <div class="card">
+            <h3>${book.name}</h3>
+            <p> ${book.author}</p>
+            <p> ${book.price} ש"ח </p>
+            <button onclick='editBook(${JSON.stringify(book)})'>Edit</button>
+            <button onclick='deleteBook(${book.id})'>Delete</button>
+          </div>`;
     });
 }
 
@@ -90,16 +90,16 @@ function deleteBook(id) {
 
 
 //user details
-const loadUserDetails = ()=>{
+const loadUserDetails = () => {
     const token = getToken();
     const id = getUserIdFromToken(token);
-    fetch(`/user/${id}` ,{
+    fetch(`/user/${id}`, {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` }
     })
         .then(res => res.json())
         .then(user => {
-            document.getElementById("currentUserName").innerText = user.name ;
+            document.getElementById("currentUserName").innerText = user.name;
             document.getElementById("userName").innerText = user.name || user.email;
             document.getElementById("userEmail").innerText = user.email;
             document.getElementById("userPassword").innerText = user.password;
@@ -124,37 +124,37 @@ const openUserModal = (user = null) => {
 
 function closeUserModal() {
     document.getElementById("userModal").classList.add("hidden");
-  }
-  
-  function saveUser(e) {
+}
+
+function saveUser(e) {
     e.preventDefault();
     const id = document.getElementById("userId").value.trim() === "" || document.getElementById("userId").value.trim() === undefined ? 0 : document.getElementById("userId").value.trim();
     const name = document.getElementById("userName").value;
     const email = document.getElementById("userEmail").value;
     const password = document.getElementById("userPassword").value;
     const role = document.getElementById("userRole").value;
-  
+
     const method = id ? "PUT" : "POST";
     const url = id ? `/user/${id}` : "/user";
-  
-    const data = { id,name, email, password, role };
-  
+
+    const data = { id, name, email, password, role };
+
     fetch(url, {
-      method,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${getToken()}`,
-      },
-      body: JSON.stringify(data),
+        method,
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${getToken()}`,
+        },
+        body: JSON.stringify(data),
     })
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to save user");
-        closeUserModal();
-        loadUsers();
-      })
-      .catch((err) => alert(err.message));
-  }
-  
-  function editUser(user) {
+        .then((res) => {
+            if (!res.ok) throw new Error("Failed to save user");
+            closeUserModal();
+            loadUsers();
+        })
+        .catch((err) => alert(err.message));
+}
+
+function editUser(user) {
     openUserModal(user);
-  }
+}

@@ -28,7 +28,7 @@ public class BookController : ControllerBase
         List<Book> books = this.bookService.Get();
         if (currentUserService.IsAdmin)
             return Ok(books);
-        System.Console.WriteLine(currentUserService.Name+" is not admin");
+        // System.Console.WriteLine(currentUserService.Name+" is not admin");
         return Ok(books.Where(b => b.Author == currentUserService.Name).ToList());
     }
 

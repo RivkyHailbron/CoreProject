@@ -156,8 +156,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>c8uyzs6vzj</Fingerprint>
-      <Integrity>dB8ppU/3iILHKktdJ7/NtDsZANejp8C9IioALfjhJ64=</Integrity>
+      <Fingerprint>ziqcrw5086</Fingerprint>
+      <Integrity>tSODQ7GkPSHjJTbOPnwgnHY8QhcKtrD6vT4bgK1nuPk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\user-books.js'))</OriginalItemSpec>

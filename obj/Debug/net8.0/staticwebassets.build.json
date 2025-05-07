@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0IEmO9HKbtqju4EZFePEcy4e4eHtKydTj4/7QWeU6mI=",
+  "Hash": "6iQwwftG2ZGhNmP51S1NPDeFlSdbhokDdRhzrRB7kVA=",
   "Source": "MyProject",
   "BasePath": "_content/MyProject",
   "Mode": "Default",
@@ -199,8 +199,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c8uyzs6vzj",
-      "Integrity": "dB8ppU/3iILHKktdJ7/NtDsZANejp8C9IioALfjhJ64=",
+      "Fingerprint": "ziqcrw5086",
+      "Integrity": "tSODQ7GkPSHjJTbOPnwgnHY8QhcKtrD6vT4bgK1nuPk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\user-books.js"
@@ -906,51 +906,6 @@
       ]
     },
     {
-      "Route": "js/user-books.c8uyzs6vzj.js",
-      "AssetFile": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\js\\user-books.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5533"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dB8ppU/3iILHKktdJ7/NtDsZANejp8C9IioALfjhJ64=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 21:45:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c8uyzs6vzj"
-        },
-        {
-          "Name": "label",
-          "Value": "js/user-books.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-dB8ppU/3iILHKktdJ7/NtDsZANejp8C9IioALfjhJ64="
-        }
-      ]
-    },
-    {
       "Route": "js/user-books.js",
       "AssetFile": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\js\\user-books.js",
       "Selectors": [],
@@ -961,7 +916,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5533"
+          "Value": "5532"
         },
         {
           "Name": "Content-Type",
@@ -969,11 +924,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"dB8ppU/3iILHKktdJ7/NtDsZANejp8C9IioALfjhJ64=\""
+          "Value": "\"tSODQ7GkPSHjJTbOPnwgnHY8QhcKtrD6vT4bgK1nuPk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 21:45:18 GMT"
+          "Value": "Wed, 07 May 2025 22:22:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -983,7 +938,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-dB8ppU/3iILHKktdJ7/NtDsZANejp8C9IioALfjhJ64="
+          "Value": "sha256-tSODQ7GkPSHjJTbOPnwgnHY8QhcKtrD6vT4bgK1nuPk="
+        }
+      ]
+    },
+    {
+      "Route": "js/user-books.ziqcrw5086.js",
+      "AssetFile": "C:\\Users\\user1\\Documents\\לימודים\\Core\\MyProject\\wwwroot\\js\\user-books.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5532"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tSODQ7GkPSHjJTbOPnwgnHY8QhcKtrD6vT4bgK1nuPk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 22:22:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ziqcrw5086"
+        },
+        {
+          "Name": "label",
+          "Value": "js/user-books.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tSODQ7GkPSHjJTbOPnwgnHY8QhcKtrD6vT4bgK1nuPk="
         }
       ]
     },

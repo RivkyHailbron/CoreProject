@@ -96,17 +96,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"t7gaq3doab"},{"Name":"integrity","Value":"sha256-Z3kuYw63Npi13WWQnbijLNwNiSorDkIDD7wPSEuxH3A="},{"Name":"label","Value":"_content/MyProject/js/login.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1029"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Z3kuYw63Npi13WWQnbijLNwNiSorDkIDD7wPSEuxH3A=\u0022"},{"Name":"Last-Modified","Value":"Mon, 05 May 2025 15:21:59 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/MyProject/js/user-books.c8uyzs6vzj.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\user-books.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"c8uyzs6vzj"},{"Name":"integrity","Value":"sha256-dB8ppU/3iILHKktdJ7/NtDsZANejp8C9IioALfjhJ64="},{"Name":"label","Value":"_content/MyProject/js/user-books.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5533"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022dB8ppU/3iILHKktdJ7/NtDsZANejp8C9IioALfjhJ64=\u0022"},{"Name":"Last-Modified","Value":"Wed, 07 May 2025 21:45:18 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MyProject/js/user-books.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\user-books.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-dB8ppU/3iILHKktdJ7/NtDsZANejp8C9IioALfjhJ64="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5533"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022dB8ppU/3iILHKktdJ7/NtDsZANejp8C9IioALfjhJ64=\u0022"},{"Name":"Last-Modified","Value":"Wed, 07 May 2025 21:45:18 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tSODQ7GkPSHjJTbOPnwgnHY8QhcKtrD6vT4bgK1nuPk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5532"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022tSODQ7GkPSHjJTbOPnwgnHY8QhcKtrD6vT4bgK1nuPk=\u0022"},{"Name":"Last-Modified","Value":"Wed, 07 May 2025 22:22:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MyProject/js/user-books.ziqcrw5086.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\user-books.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ziqcrw5086"},{"Name":"integrity","Value":"sha256-tSODQ7GkPSHjJTbOPnwgnHY8QhcKtrD6vT4bgK1nuPk="},{"Name":"label","Value":"_content/MyProject/js/user-books.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5532"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022tSODQ7GkPSHjJTbOPnwgnHY8QhcKtrD6vT4bgK1nuPk=\u0022"},{"Name":"Last-Modified","Value":"Wed, 07 May 2025 22:22:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MyProject/login.51svi911wt.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\login.html'))</AssetFile>
