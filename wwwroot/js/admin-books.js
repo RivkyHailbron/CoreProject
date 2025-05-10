@@ -38,8 +38,6 @@ function openBookModal(book = null) {
 
 }
 
-
-
 function saveBook(e) {
   e.preventDefault();
   const id = document.getElementById('bookId').value.trim() === "" || document.getElementById('bookId').value.trim() === undefined ? 0 : document.getElementById('bookId').value.trim();

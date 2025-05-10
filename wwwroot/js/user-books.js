@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     const user = checkAuthAndRole(["User"]);
     loadUserDetails();
@@ -44,10 +43,11 @@ function closeBookModal() {
 
 function saveBook(e) {
     e.preventDefault();
-    const id = document.getElementById("bookId").value;
+    const id = document.getElementById("bookId").value || 0;
     const title = document.getElementById("bookTitle").value;
     const price = document.getElementById("bookPrice").value;
-    const author = "דוגמת ";
+
+    const author = document.getElementById("bookAuthor").value;
     const method = id ? "PUT" : "POST";
     const url = id ? `/book/${id}` : "/book";
 
@@ -57,7 +57,7 @@ function saveBook(e) {
             "Content-Type": "application/json",
             Authorization: `Bearer ${getToken()}`
         },
-        body: JSON.stringify({ id: 0, name: title, author, price })
+        body: JSON.stringify({ id, name: title, author, price })
     })
         .then(res => {
             if (!res.ok) throw new Error("שגיאה בשמירה");
@@ -68,10 +68,11 @@ function saveBook(e) {
 }
 
 
-function editBook(id, title, description) {
-    document.getElementById("bookId").value = id;
-    document.getElementById("bookTitle").value = title;
-    document.getElementById("bookPrice").value = description;
+function editBook(book) {
+    document.getElementById("bookId").value = book.id;
+    document.getElementById("bookTitle").value = book.name;
+    document.getElementById("bookAuthor").value = book.author;
+    document.getElementById("bookPrice").value = book.price;
     document.getElementById("bookModal").classList.remove("hidden");
 }
 
@@ -99,6 +100,7 @@ const loadUserDetails = () => {
     })
         .then(res => res.json())
         .then(user => {
+            document.getElementById("editUserBtn").addEventListener("click", () => editUser(user));
             document.getElementById("currentUserName").innerText = user.name;
             document.getElementById("userName").innerText = user.name || user.email;
             document.getElementById("userEmail").innerText = user.email;
@@ -106,6 +108,7 @@ const loadUserDetails = () => {
         })
         .catch(console.error);
 }
+
 const getUserIdFromToken = (token) => {
     const payload = token.split(".")[1];
     const decodedPayload = atob(payload.replace(/-/g, "+").replace(/_/g, "/"));
@@ -113,13 +116,12 @@ const getUserIdFromToken = (token) => {
     return userData.id;
 }
 
-const openUserModal = (user = null) => {
+const openUserModal = (user) => {
     document.getElementById("userModal").classList.remove("hidden");
-    document.getElementById("userId").value = user?.id || "";
+    document.getElementById("userId").value = user?.id ;
     document.getElementById("userName").value = user?.name || "";
     document.getElementById("userEmail").value = user?.email || "";
     document.getElementById("userPassword").value = user?.password || "";
-    document.getElementById("userRole").value = user?.role || "User";
 }
 
 function closeUserModal() {
@@ -128,13 +130,13 @@ function closeUserModal() {
 
 function saveUser(e) {
     e.preventDefault();
-    const id = document.getElementById("userId").value.trim() === "" || document.getElementById("userId").value.trim() === undefined ? 0 : document.getElementById("userId").value.trim();
+    const id = getUserIdFromToken(getToken());
     const name = document.getElementById("userName").value;
     const email = document.getElementById("userEmail").value;
     const password = document.getElementById("userPassword").value;
-    const role = document.getElementById("userRole").value;
+    const role = "User";
 
-    const method = id ? "PUT" : "POST";
+    const method = "PUT";
     const url = id ? `/user/${id}` : "/user";
 
     const data = { id, name, email, password, role };
@@ -150,7 +152,7 @@ function saveUser(e) {
         .then((res) => {
             if (!res.ok) throw new Error("Failed to save user");
             closeUserModal();
-            loadUsers();
+            loadUserDetails();
         })
         .catch((err) => alert(err.message));
 }

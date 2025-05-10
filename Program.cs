@@ -7,6 +7,7 @@ using Microsoft.OpenApi.Models;
 using MyProject.Interfaces;
 using MyProject.Middlewares;
 using MyProject.Services;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 Console.WriteLine($"Content root path: {builder.Environment.ContentRootPath}");
@@ -41,6 +42,14 @@ builder.Services.AddAuthentication(options =>
     cfg.RequireHttpsMetadata = false;
     cfg.TokenValidationParameters = new JwtService(builder.Configuration).GetTokenValidationParameters();
 });
+// // הוספת Serilog
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day, 
+                  fileSizeLimitBytes: 100_000_000) // 100MB
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 var app = builder.Build();
 
@@ -66,4 +75,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+Console.WriteLine("Application is running on:");
+Console.WriteLine("HTTP: http://localhost:5095");
+Console.WriteLine("HTTPS: https://localhost:7148");
 app.Run();

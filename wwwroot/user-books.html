@@ -1,25 +1,27 @@
 <!-- wwwroot/users.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>הספרים שלי</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header>
     <h1>הספרים שלי</h1>
     <nav>
       <label id="userNameLabel">שלום, <span id="currentUserName"></span></label><br><br>
       <button onclick="logout()">Logout</button>
-      <button onclick="openUserModal()">ערוך פרופיל</button>
+      <button id="editUserBtn" >ערוך פרופיל</button>
     </nav>
   </header>
 
   <main>
     <section>
-      <button onclick="openBookModal()">הוסף ספר</button>
+      <button onclick="openBookModal()">הוסף ספר</button><br><br>
       <div id="bookList" class="card-container"></div>
     </section>
   </main>
@@ -30,10 +32,12 @@
       <form id="bookForm">
         <h2>ספר</h2>
         <input type="hidden" id="bookId" />
+        <input type="hidden" id="bookAuthor" />
+
         <label>כותרת:</label>
         <input type="text" id="bookTitle" required />
         <label>מחיר:</label>
-        <input type="number" id="bookPrice" required></textarea>
+        <input type="text" id="bookPrice" required></textarea>
         <div class="modal-actions">
           <button type="submit">שמור</button>
           <button type="button" onclick="closeBookModal()">ביטול</button>
@@ -53,11 +57,6 @@
         <input type="email" id="userEmail" required />
         <label>סיסמה:</label>
         <input type="password" id="userPassword" required />
-        <!-- <label>הרשאה:</label>
-        <select id="userRole">
-          <option value="User">User</option>
-          <option value="Admin">Admin</option>
-        </select> -->
         <div class="modal-actions">
           <button type="submit">שמור</button>
           <button type="button" onclick="closeUserModal()">ביטול</button>
@@ -65,7 +64,8 @@
       </form>
     </div>
 
-  <script src="js/app.js"></script>
-  <script src="js/user-books.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/user-books.js"></script>
 </body>
+
 </html>
